@@ -7,6 +7,8 @@ import { bingoSeeder } from './bingo.seed';
 import { bingoCardSeeder } from './bingo-card.seed';
 import { pointTransactionSeeder } from './point-transaction.seed';
 import { raffleEntriesSeeder } from './raffle-entries.seed';
+import { luckyCodeSeeder } from './lucky-code.seed';
+import { luckyCodeTransaction } from './lucky-code-transaction.seed';
 
 const prisma = new PrismaClient();
 
@@ -20,10 +22,13 @@ async function main() {
   // await bingoCardSeeder(prisma);
   // await upcTransactionSeeder(prisma);
 
-  await Promise.all([
-    pointTransactionSeeder(prisma),
-    raffleEntriesSeeder(prisma),
-  ]);
+  // await Promise.all([
+  //   pointTransactionSeeder(prisma),
+  //   raffleEntriesSeeder(prisma),
+  // ]);
+
+  await luckyCodeSeeder(prisma);
+  await luckyCodeTransaction(prisma);
 }
 
 // Execute the main function
