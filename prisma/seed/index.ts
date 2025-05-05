@@ -21,14 +21,18 @@ async function main() {
   // await bingoSeeder(prisma);
   // await bingoCardSeeder(prisma);
   // await upcTransactionSeeder(prisma);
-
   // await Promise.all([
   //   pointTransactionSeeder(prisma),
   //   raffleEntriesSeeder(prisma),
   // ]);
+  // await luckyCodeSeeder(prisma);
+  // await luckyCodeTransaction(prisma);
 
-  await luckyCodeSeeder(prisma);
-  await luckyCodeTransaction(prisma);
+  await Promise.all([
+    pointTransactionSeeder(prisma),
+    raffleEntriesSeeder(prisma),
+    luckyCodeTransaction(prisma),
+  ]);
 }
 
 // Execute the main function

@@ -5,7 +5,7 @@ export async function raffleEntriesSeeder(prisma: PrismaClient) {
   const programs = await prisma.programs.findMany();
 
   const upcTransactions = await prisma.upc_transactions.findMany({
-    skip: 0,
+    skip: 1,
     take: 500000,
     orderBy: { id: 'asc' },
     select: {
